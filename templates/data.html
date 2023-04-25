@@ -1,13 +1,20 @@
 <h4> Enter your information here</h4>
-<form>
-  <label>Full Name:</label>
-  <input type="text" name="full_name" placeholder="Subhram Dasgupta"><br>
-  <label>Sex:</label>
-  <input type="number" name="height" placeholder="In cms"><br>
-  <label>Age</label>
-  <input type="number" name="age" placeholder="In cms"><br>
-  <label>Height:</label>
-  <input type="number" name="height" placeholder="In cms"><br>
-  <label>Weight:</label>
-  <input type="number" name="weight" placeholder="In cms"><br>
+<form method="post" action="/calculate">
+  <div>
+    <label>Full Name:</label> <br>
+    <input type="text" name="full_name"  id="name" required placeholder="Subhram Dasgupta"    
+  </div>
+  <div><label for="age">Age</label> <br>
+    <input type="text" name="age" id="age">
+  </div>
+  <div>  
+    <label for="height">Height:</label><br>
+    <input type="text" name="height" id="height" placeholder="In metres">
+  </div>
+  <div>
+    <label for="weight">Weight:</label><br>
+    <input type="text" name="weight" id="weight" placeholder="In kgs">
+  </div>
+    <br>
+    <input type="submit" name="calculate"> 
 </form>
