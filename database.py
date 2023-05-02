@@ -1,24 +1,15 @@
-from sqlalchemy import create_engine, text
+from replit import db
+from main.py import name
+from main.py import age
+from main.py import bmi
 
+print(name)
+db['name'] = name
+db['age'] = age
+db['bmi'] = bmi
 
-db_connection = "mysql+pymysql://4u638pzvhu4ta106fhhs:pscale_pw_OPZ0NxrN4YJCBTZiMqPV6V7c5SMFuK0eoHrqWXGz2VM@aws.connect.psdb.cloud/smart-diet-application?charset=utf8mb4"
-
-engine = create_engine(
-  db_connection,
-  connect_args={
-    "ssl": {
-      "ssl_ca": "/etc/ssl/cert.pem",
-    }
-    
-  })
-
-with engine.connect() as conn:
-  result = conn.execute(text("select * from diet"))
-
-  results_dicts=[]
-  for row in result.all():
-    results_dicts.append(dict(row))
-    
-  
-  print(result)
-
+#this is for deleting keys
+for key in db.keys():
+      del db[key]
+      if key not in db:
+        print("Value deleted successfully.")
